@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>OM CHAIN</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		<style>
+			/* Cool infinite background scrolling animation.
+			 * Twitter: @kootoopas
+			 */
+			/* Exo thin font from Google. */
+			@import url(https://fonts.googleapis.com/css?family=Exo:100);
+			/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+			/* Animations */
+			@-webkit-keyframes bg-scrolling-reverse {
+			  100% {
+			    background-position: 50px 50px;
+			  }
+			}
+			@-moz-keyframes bg-scrolling-reverse {
+			  100% {
+			    background-position: 50px 50px;
+			  }
+			}
+			@-o-keyframes bg-scrolling-reverse {
+			  100% {
+			    background-position: 50px 50px;
+			  }
+			}
+			@keyframes bg-scrolling-reverse {
+			  100% {
+			    background-position: 50px 50px;
+			  }
+			}
+			@-webkit-keyframes bg-scrolling {
+			  0% {
+			    background-position: 50px 50px;
+			  }
+			}
+			@-moz-keyframes bg-scrolling {
+			  0% {
+			    background-position: 50px 50px;
+			  }
+			}
+			@-o-keyframes bg-scrolling {
+			  0% {
+			    background-position: 50px 50px;
+			  }
+			}
+			@keyframes bg-scrolling {
+			  0% {
+			    background-position: 50px 50px;
+			  }
+			}
+			/* Main styles */
+			body {
+			  margin-top: 13.5rem;
+			  color: #999;
+			  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+			  text-align: center;
+			  /* img size is 50x50 */
+			  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+			  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+			  /* Safari 4+ */
+			  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+			  /* Fx 5+ */
+			  -o-animation: bg-scrolling-reverse 0.92s infinite;
+			  /* Opera 12+ */
+			  animation: bg-scrolling-reverse 0.92s infinite;
+			  /* IE 10+ */
+			  -webkit-animation-timing-function: linear;
+			  -moz-animation-timing-function: linear;
+			  -o-animation-timing-function: linear;
+			  animation-timing-function: linear;
+			}
+			/*body::before {
+			  content: "INFINITY";
+			  font-size: 8rem;
+			  font-weight: 100;
+			  font-style: normal;
+			}*/
+		</style>
+		<style>
+			@font-face {
+			  font-family: acfont;
+			  src: url(./fonts/ActionComicsBlack.ttf);
+			}
+			@font-face {
+				font-family: spacemono;
+				src: url(./fonts/SpaceMono-Regular.ttf);
+			}
+			div.fixedwallet {
+			  position: fixed;
+			  top: 0;
+			  right: 0;
+			  width: 300px;
+			  /*border: 3px solid #73AD21;*/
+			}
+		</style>
+		<style type="text/css">
+			html,
+			body {
+			}
+
+			.glow-on-hover {
+			    width: 220px;
+			    height: 50px;
+			    border: none;
+			    outline: none;
+			    color: #fff;
+			    background: #111;
+			    cursor: pointer;
+			    position: relative;
+			    z-index: 0;
+			    border-radius: 10px;
+			}
+
+			.glow-on-hover:before {
+			    content: '';
+			    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+			    position: absolute;
+			    top: -2px;
+			    left:-2px;
+			    background-size: 400%;
+			    z-index: -1;
+			    filter: blur(5px);
+			    width: calc(100% + 4px);
+			    height: calc(100% + 4px);
+			    animation: glowing 20s linear infinite;
+			    opacity: 0;
+			    transition: opacity .3s ease-in-out;
+			    border-radius: 10px;
+			}
+
+			.glow-on-hover:active {
+			    color: #000
+			}
+
+			.glow-on-hover:active:after {
+			    background: transparent;
+			}
+
+			.glow-on-hover:hover:before {
+			    opacity: 1;
+			}
+
+			.glow-on-hover:after {
+			    z-index: -1;
+			    content: '';
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    background: #111;
+			    left: 0;
+			    top: 0;
+			    border-radius: 10px;
+			}
+
+			@keyframes glowing {
+			    0% { background-position: 0 0; }
+			    50% { background-position: 400% 0; }
+			    100% { background-position: 0 0; }
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="font-family: acfont;font-size: 30px;position: fixed;z-index: 999;color: indianred;top: 0;margin-top: 10px;margin-right: 5px;">OM-CHAIN</h1>
+		<div id="address" class="fixedwallet" style="font-family: monospace;" onclick="copyText()"></div>
+		<div id="bd" style="left: 0;"></div>
+		<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+		<script src="./bundle/bundle.js" type="module"></script>
+		<script>
+			function copyText() {
+			  var copyText = document.getElementById("address");
+			  var range = document.createRange();
+			  range.selectNode(copyText);
+			  window.getSelection().addRange(range);
+			  document.execCommand("copy");
+			}
+		</script>
+	</body>
+</html>
