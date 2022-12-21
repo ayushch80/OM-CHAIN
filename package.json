@@ -10,7 +10,7 @@
   "scripts": {
     "bundle": "browserify src/index.js -o src/bundle/bundle.js",
     "dev": "vite --host",
-    "build": "vite build && browserify src/index.js -o src/dist/bundle/bundle.js",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
