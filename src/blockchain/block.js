@@ -7,15 +7,24 @@ class Block {
     this.previousHash = previousHash;
     this.difficulty = difficulty;
     this.hash = this.calculateHash(difficulty);
-    this.miner = miner;
+    this.miner = miner.address;
+    this.previousReward = 100;
+    let reward;
+    try {
+      reward = (Math.round(Math.cos(Math.random()*3))+this.previousReward)-((this.previousReward)/100)*Math.random();
+    } catch (e) {
+      console.log(e);
+    }
+    this.reward = reward
+
+    miner.balance += this.reward;
   }
-  
+
   calculateHash(difficulty) {
     const pow = require('proof-of-work');
     const solver = new pow.Solver();
-    const nonce = solver.solve(difficulty);
+    var nonce = solver.solve(difficulty);
     return "0x"+sha256(sha256(nonce.toString()).toString()).toString();
   }
-  
 }
 module.exports = Block;

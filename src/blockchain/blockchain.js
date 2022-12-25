@@ -1,38 +1,37 @@
 const Block = require('./block');
+const Wallet = require('./wallet');
 class Blockchain {
   constructor() {
     this.chain = [this.createGenesisBlock()];
   }
   createGenesisBlock() {
-    return new Block(0, Date.now(), 'Genesis block', '0', '0x00000000000000000000000000000000', 2);
+    const nullWallet = new Wallet;
+    nullWallet.importOnlyAddress('0x00000000000000000000000000000000')
+    return new Block(0, Date.now(), 'Genesis block', '0', nullWallet, 3);
   }
   getLatestBlock() {
     return this.chain[this.chain.length - 1];
   }
   addBlock(newBlock) {
     newBlock.previousHash = this.getLatestBlock().hash;
-    //newBlock.hash = newBlock.calculateHash(3);
+    newBlock.previousReward = this.getLatestBlock().reward;
     this.chain.push(newBlock);
   }
-  /*
   isChainValid() {
     for (let i = 1; i < this.chain.length; i++) {
       const currentBlock = this.chain[i];
       const previousBlock = this.chain[i - 1];
-      if (currentBlock.hash !== currentBlock.calculateHash(3)) {
-        return false;
-      }
       if (currentBlock.previousHash !== previousBlock.hash) {
         return false;
       }
     }
     return true;
   }
-  */
-  mineBlock(data, wallet, difficulty) {
-    const newBlock = new Block(this.getLatestBlock().nonce + 1, Date.now(), data, this.getLatestBlock().hash, wallet, difficulty);
+  mineBlock(data, wallet) {
+    //let diff = Math.floor(this.getLatestBlock().nonce/50);
+    let diff = 100;
+    const newBlock = new Block(this.getLatestBlock().nonce + 1, Date.now(), data, this.getLatestBlock().hash, wallet, diff);
     this.addBlock(newBlock);
-    this.balance += 100;
   }
 }
 

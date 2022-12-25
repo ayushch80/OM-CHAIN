@@ -6,13 +6,7 @@
 		<title>OM CHAIN</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 		<style>
-			/* Cool infinite background scrolling animation.
-			 * Twitter: @kootoopas
-			 */
-			/* Exo thin font from Google. */
 			@import url(https://fonts.googleapis.com/css?family=Exo:100);
-			/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
-			/* Animations */
 			@-webkit-keyframes bg-scrolling-reverse {
 			  100% {
 			    background-position: 50px 50px;
@@ -53,33 +47,20 @@
 			    background-position: 50px 50px;
 			  }
 			}
-			/* Main styles */
 			body {
 			  margin-top: 13.5rem;
 			  color: #999;
 			  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
-			  text-align: center;
-			  /* img size is 50x50 */
 			  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
 			  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
-			  /* Safari 4+ */
 			  -moz-animation: bg-scrolling-reverse 0.92s infinite;
-			  /* Fx 5+ */
 			  -o-animation: bg-scrolling-reverse 0.92s infinite;
-			  /* Opera 12+ */
 			  animation: bg-scrolling-reverse 0.92s infinite;
-			  /* IE 10+ */
 			  -webkit-animation-timing-function: linear;
 			  -moz-animation-timing-function: linear;
 			  -o-animation-timing-function: linear;
 			  animation-timing-function: linear;
 			}
-			/*body::before {
-			  content: "INFINITY";
-			  font-size: 8rem;
-			  font-weight: 100;
-			  font-style: normal;
-			}*/
 		</style>
 		<style>
 			@font-face {
@@ -90,13 +71,91 @@
 				font-family: spacemono;
 				src: url(./fonts/SpaceMono-Regular.ttf);
 			}
+			@font-face {
+				font-family: spacemonob;
+				src: url(./fonts/SpaceMono-Bold.ttf);
+			}
 			div.fixedwallet {
 			  position: fixed;
 			  top: 0;
 			  right: 0;
 			  width: 300px;
-			  /*border: 3px solid #73AD21;*/
+			  margin-right: 150px;
 			}
+			div.bd {
+				margin-left: 40px;
+				width: 900px;
+			}
+			div.end {
+				position: fixed;
+				top: 0;
+				right: 0;
+				margin-left: 700px;
+				margin-top: 500px;
+				font-family: spacemono;
+				font-size: small;
+				background: indianred;
+				color: khaki;
+				width: inherit;
+			}
+
+			.button1 {
+				position: fixed;
+				top: 0;
+				right: 0;
+				font-family: spacemonob;
+				color: floralwhite;
+				border: indianred;
+				background: indianred;
+				margin-top: 50px;
+				margin-right: 30px;
+				border-radius: 5px;
+				cursor: pointer;
+				width: 200px;
+				height: 50px;
+			}
+
+			.button2 {
+				position: fixed;
+				top: 0;
+				right: 0;
+				font-family: spacemonob;
+				color: floralwhite;
+				border: indianred;
+				background: indianred;
+				margin-top: 120px;
+				margin-right: 30px;
+				border-radius: 5px;
+				cursor: pointer;
+				width: 200px;
+				height: 50px;
+			}
+
+			.button3 {
+				position: fixed;
+				top: 0;
+				right: 0;
+				font-family: spacemonob;
+				color: floralwhite;
+				border: indianred;
+				background: indianred;
+				margin-top: 190px;
+				margin-right: 30px;
+				border-radius: 5px;
+				cursor: pointer;
+				width: 200px;
+				height: 50px;
+			}
+
+			.revPrivateKey {
+				font-family: spacemonob;
+				color: floralwhite;
+				border: indianred;
+				background: indianred;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+
 		</style>
 		<style type="text/css">
 			html,
@@ -163,12 +222,40 @@
 			    100% { background-position: 0 0; }
 			}
 		</style>
+		<style type="text/css">
+			table, th, td {
+				border: 1px solid indianred;
+				padding: 8px;
+				color: indianred;
+			}
+			th {
+			  padding-top: 12px;
+			  padding-bottom: 12px;
+			  text-align: left;
+			  background-color: indianred;
+			  color: white;
+			  border: 1px solid white;
+			}
+		</style>
 	</head>
 	<body>
-		<h1 style="font-family: acfont;font-size: 30px;position: fixed;z-index: 999;color: indianred;top: 0;margin-top: 10px;margin-right: 5px;">OM-CHAIN</h1>
-		<div id="address" class="fixedwallet" style="font-family: monospace;" onclick="copyText()"></div>
-		<div id="bd" style="left: 0;"></div>
-		<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+		<h1 style="font-family: acfont;font-size: 30px;position: fixed;z-index: 999;color: indianred;top: 0;margin-top: 10px;margin-left: 5px;">OM-CHAIN</h1><h5 style="font-family: acfont;font-size: 8px;position: fixed;z-index: 999;color: indianred;top: 0;margin-top: 60px;margin-left: 30px;">THE SOUND OF UNITY</h5>
+		<div id="address" class="fixedwallet" style="font-family: spacemonob;" onclick="copyText()" alt="address"></div>
+		<button id="home" class="button1">HOME</button>
+		<button id="account" class="button2">ACCOUNT</button>
+		<button id="explorer" class="button3">BLOCK EXPLORER</button>
+	<div id="main">
+		<div id="bd" class="bd" style="font-family: spacemono;">MINING GENESIS BLOCK</div>
+	</div>
+		<div id="end" class="end">
+			<p style="font-size: 20px;">OM CHAIN [OMC]   ॐ</p>
+			<p style="font-size: 20px;">A BLOCKCHAIN IN <z style="background-color: yellow;color: black;"><z style="font-size: 1px;">.......................<z style="font-size: 10px;">JS</z>....</z></z></p>
+			<p style="font-size: 20px;">MADE BY <a href="https://github.com/ayushch80" style="color: darkkhaki;">ayushch80</a></p>
+			<p style="font-size: 15px;background-color: aliceblue;color: royalblue;">UNDER DEVELOPMENT</p>
+			<!--<p style="font-size: 15px;background-color: aliceblue;color: royalblue;">MAINNET EXPECTED TO BE LAUNCHED BY 2025</p>-->
+			<p style="font-size: 10px;background-color: aliceblue;color: royalblue;">LAST UPDATE -- 21:49 22-DEC-2022 IST [GMT +5:30]</p>
+		</div>
+		<div id="chainValidity" style="font-family: spacemonob;bottom: 0;margin-bottom: 60px;"></div>
 		<script src="./bundle/bundle.js" type="module"></script>
 		<script>
 			function copyText() {

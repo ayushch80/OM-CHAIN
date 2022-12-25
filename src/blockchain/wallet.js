@@ -1,4 +1,3 @@
-const EthCrypto = require('eth-crypto');
 const crypto = require('crypto');
 const CryptoJS = require('crypto-js');
 async function checkAmount(amount) {
@@ -23,19 +22,9 @@ class Wallet {
     this.address = 'omc1' + CryptoJS.SHA3(this.privateKey, { outputLength: 256 }).toString().slice(24);
     this.balance = 10;
   }
-  signTransaction(data) {
-    return EthCrypto.sign(this.privateKey, data);
-  }
-  makeTransaction(amount, recipientAddress) {
-    const data = {
-      type: 'send',
-      amount,
-      senderAddress: this.address,
-      recipientAddress
-    };
-    const signedData = this.signTransaction(data);
-    this.balance -= amount;
-    return signedData;
+  importOnlyAddress(address) {
+    this.address = address;
+    this.balance = 0;
   }
   myBalance() {
     return this.balance;
