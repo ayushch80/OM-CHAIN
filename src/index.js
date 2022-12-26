@@ -38,7 +38,7 @@ const bl = new Blockchain;
  
 //variables 
 let i = 0;              //block nonce 
-var mining = true;      //mining check 
+let mining = true;      //mining check 
 let time = 5 * 1000;    //time to wait before mining next block 
  
 //home function 
@@ -157,17 +157,17 @@ async function blockExplorer() {
   var chainData = '<tr><th>NONCE</th><th>HASH</th><th>TIMESTAMP</th></tr>'; 
  
   //making table responsive 
-  var tableScript = ''; 
+  let tableScript = ''; 
    
   //loop for table 
-  for (var n = bl.chain.length - 1; n >= 0; n--) { 
+  for (let n = bl.chain.length - 1; n >= 0; n--) { 
     chainData += `<tr><td id="d${bl.chain[n].nonce}">${bl.chain[n].nonce}</td><td>${bl.chain[n].hash}</td><td>${bl.chain[n].timestamp}</td></tr>` 
     tableScript += `document.getElementById(d${bl.chain[n].nonce}).addEventListener("click", function(){getDataByBlockNumber(${bl.chain[n].nonce})});` 
   } 
  
   //get block data function by block number 
   async function getDataByBlockNumber(blockNumber) { 
-    var data = bl.chain[blockNumber] 
+    let data = bl.chain[blockNumber] 
     return JSON.stringify(data); 
   } 
   //console.log(getDataByBlockNumber(10)); 
