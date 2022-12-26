@@ -2,12 +2,12 @@ const crypto = require('crypto');
 const CryptoJS = require('crypto-js');
 async function checkAmount(amount) {
   if (this.balance === 0) {
-    console.log("ASK ADMIN TO REFILL YOUR ACCOUNT");
+    
     return false;
   } else if (this.balance >= amount) {
     return this.balance - amount;
   } else {
-    console.log("AN ERROR OCCURED -- 0x001A");
+    
   }
 }
 class Wallet {
