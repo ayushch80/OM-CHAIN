@@ -1,12 +1,13 @@
 const Block = require('./block');
 const Wallet = require('./wallet');
+//const Transaction = require('./transaction');
 class Blockchain {
   constructor() {
     this.chain = [this.createGenesisBlock()];
   }
   createGenesisBlock() {
     const nullWallet = new Wallet;
-    nullWallet.importOnlyAddress('0x00000000000000000000000000000000')
+    nullWallet.importOnlyAddress('omc100000000000000000000000000000000')
     return new Block(0, Date.now(), 'Genesis block', '0', nullWallet, 3);
   }
   getLatestBlock() {
@@ -29,7 +30,7 @@ class Blockchain {
   }
   mineBlock(data, wallet) {
     let diff = Math.floor(this.getLatestBlock().nonce/50);
-    const newBlock = new Block(this.getLatestBlock().nonce + 1, Date.now(), data, this.getLatestBlock().hash, wallet, 0);
+    const newBlock = new Block(this.getLatestBlock().nonce + 1, Date.now(), data, this.getLatestBlock().hash, wallet, diff);
     this.addBlock(newBlock);
   }
 }
