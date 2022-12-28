@@ -255,7 +255,6 @@
 		</div>
 		<div id="chainValidity" style="font-family: spacemonob;bottom: 0;margin-bottom: 60px;"></div>
 		<script src="./bundle/bundle.js" type="module"></script>
-		<script src="./uxtweak.js" type="module"></script>
 		<script>
 			function copyText() {
 			  var copyText = document.getElementById("address");
@@ -264,6 +263,17 @@
 			  window.getSelection().addRange(range);
 			  document.execCommand("copy");
 			}
+		</script>
+		<!-- Hotjar Tracking Code for https://om-chain.vercel.app -->
+		<script>
+			(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:3303194,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 		</script>
 	</body>
 </html>

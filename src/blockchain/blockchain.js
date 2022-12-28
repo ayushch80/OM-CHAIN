@@ -29,7 +29,7 @@ class Blockchain {
   }
   mineBlock(data, wallet) {
     let diff = Math.floor(this.getLatestBlock().nonce/50);
-    const newBlock = new Block(this.getLatestBlock().nonce + 1, Date.now(), data, this.getLatestBlock().hash, wallet, diff);
+    const newBlock = new Block(this.getLatestBlock().nonce + 1, Date.now(), data, this.getLatestBlock().hash, wallet, 0);
     this.addBlock(newBlock);
   }
 }
