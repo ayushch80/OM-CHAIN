@@ -494,10 +494,10 @@ des.js@^1.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
 
-deta@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/deta/-/deta-1.1.0.tgz#7a5ce103d859a182b35614034387541525b5c8be"
-  integrity sha512-mQAvfAsB++McPMT3Gb39KWkxfFzaPSF+z8XNpomakkUslg9xTu6Z8gVjAXaDGJm0LFEIIZQdokpU+lOJOXtOqw==
+deta@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/deta/-/deta-1.2.0.tgz#fa80701686519d0b7de74c5f97f69de13d819a4e"
+  integrity sha512-GWjXnVQmyMY1rALnIhdZ3+LioC83R7n9nINoCIbC1KfxusrBeHfqG5LXYbpvq+1sbPNSGAV45Kuf8/TJugUYsw==
   dependencies:
     node-fetch "^2.6.7"
 
